@@ -1,0 +1,14 @@
+<div>
+    <h1>Login</h1>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="user">User:</label>
+        <input type="email" id="user" value={user} onChange={handleUserChange} />
+      </div>
+      <div>
+        <label htmlFor="password">Password:</label>
+        <input type="password" id="password" value={password} onChange={handlePasswordChange} />
+      </div>
+      <button type="submit">Log In</button>
+    </form>
+  </div>
