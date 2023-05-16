@@ -22,7 +22,7 @@
 
 
 body {
-  background-color: rgb(241, 245, 220);
+  background-image: url(fondo.JPG);
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

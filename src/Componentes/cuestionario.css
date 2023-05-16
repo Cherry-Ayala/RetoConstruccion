@@ -8,7 +8,7 @@
     }
 
     body{
-        background-color: beige;
+        background-image: url(fondo.JPG);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
