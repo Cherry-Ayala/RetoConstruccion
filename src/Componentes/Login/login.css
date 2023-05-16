@@ -26,7 +26,7 @@
 
 
     body {
-      background: url(fondo.JPG) no-repeat fixed;
+      background: url(../../Imagenes/fondo.JPG) no-repeat fixed;
       background-size: cover;
       font-family: "Roboto", sans-serif;
       -webkit-font-smoothing: antialiased;
