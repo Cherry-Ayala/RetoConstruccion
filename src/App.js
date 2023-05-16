@@ -1,8 +1,8 @@
 import React from 'react'; 
 import { Routes, Route } from 'react-router-dom';
 
-import Login from './Componentes/login';
-import Cuestionario from './Componentes/cuestionario.jsx';
+import Login from './Componentes/Login/login.jsx';
+import Doctor from './Componentes/Doctor/Doctor.jsx';
 //import vistaadmin from './src/vistaadmin';
 
 
@@ -12,7 +12,7 @@ function App() {
       <div className="app">
         <Routes>
           <Route exact path='/' element={<Login />} />
-          <Route exact path='/cuestionario' element={<Cuestionario />} />
+          <Route exact path='/Doctor' element={<Doctor />} />
         </Routes>
       </div>
 

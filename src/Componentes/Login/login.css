@@ -1,0 +1,32 @@
+
+* {
+  text-align: center;
+  color: gray;
+}
+
+body {
+  background: url(../../Imagenes/fondo.JPG) no-repeat fixed;
+  background-size: cover;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.card {
+  border: 5px solid;
+  border-radius: 25px;
+  border-color: rgba(0, 187, 255, 0.684);
+  margin: auto;
+  background-color: rgba(0, 187, 255, 0.684);
+  height: 200px;
+  width: 20%;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+    
+div{
+  margin: 20px;
+}
+    

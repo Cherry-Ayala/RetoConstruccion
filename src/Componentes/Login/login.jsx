@@ -30,15 +30,15 @@ function Login () {
       <h1>Login</h1>
       
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className='User'>
           <label htmlFor="user">User:</label>
           <input type="email" id="user" value={user} onChange={handleUserChange} />
         </div>
-        <div>
+        <div className='Password'>
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" value={password} onChange={handlePasswordChange} />
         </div>
-        <div>
+        <div className='Button'>
         <button type="submit">Log In</button>
         </div>
       </form>
