@@ -6,48 +6,17 @@ export const Pacientes = [
     }, 
     {
         "id" : 2, 
-        "nombre" : "John",
-        "apellido" : "Wick"
+        "nombre" : "Aldo",
+        "apellido" : "Barraza"
     }, 
     {
         "id" : 3, 
-        "nombre" : "Camilo",
-        "apellido" : "Perez"
+        "nombre" : "Adrian",
+        "apellido" : "Cavazos"
     }, 
     {
         "id" : 4, 
-        "nombre" : "Isabella ",
-        "apellido" : "Justo"
-    }, 
-    {
-        "id" : 5, 
-        "nombre" : "Estefany",
-        "apellido" : "Morales"
-    }, 
-    {
-        "id" : 6, 
-        "nombre" : "Diego",
-        "apellido" : "Jimenez"
-    }, 
-    {
-        "id" : 7, 
-        "nombre" : "Gabriela",
-        "apellido" : "Suarez"
-    }, 
-    {
-        "id" : 8, 
-        "nombre" : "Danny",
-        "apellido" : "Fantom"
-        
-    },
-    {
-        "id" : 9, 
-        "nombre" : "Diego",
-        "apellido" : "Ramirez"
-    }, 
-    {
-        "id" : 10, 
-        "nombre" : "Anelise",
-        "apellido" : "Moreno"
-    }  
+        "nombre" : "Carlos ",
+        "apellido" : "Ayala"
+    } 
 ]

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Row, Col, Typography, Table, Space} from 'antd'
+
 import { Pacientes } from './Pacientes';
 import './Doctor.css'
 
 
-const {Title} = Typography; 
+
 
 function Cuentas() {
     const [query, setQuery] = useState(""); 

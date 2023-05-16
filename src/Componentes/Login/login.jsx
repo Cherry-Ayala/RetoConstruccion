@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import './login.css'
 
 function Login () {
@@ -23,7 +23,7 @@ function Login () {
             }
         })
 
-        .catch(error => {console.log(error);});
+        // .catch(error => {console.log(error);});
     }
     return (
     <div className='card '>
