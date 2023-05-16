@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './cuestionario.css';
 
 function Cuestionario() {
 
@@ -44,40 +45,40 @@ function Cuestionario() {
             .catch(error => {console.log(error);});}
 
         return(
-            <div>
+            <div className="cuestionario">
                 <h1>Cuestionario</h1>
                 <form onSubmit={handleSubmit}>
-                    <label htmlFor="nombre">nombre:</label>
+                    <label htmlFor="nombre">Nombre:</label>
                     <input type="nombre" id="nombre" name="nombre" requiered value={nombre} onChange={handleNombreChange} />
     
                     <br />
     
-                    <label htmlFor="desayuno">desayuno:</label>
+                    <label htmlFor="desayuno">Desayuno:</label>
                     <input type="text" id="desayuno" name="desayuno" requiered value={desayuno} onChange={handleDesayunoChange} />
 
                     <br />
 
-                    <label htmlFor="comida">comida:</label>
+                    <label htmlFor="comida">Comida:</label>
                     <input type="text" id="comida" name="comida" requiered value={comida} onChange={handleComidaChange} />
     
                     <br />
 
-                    <label htmlFor="cena">cena:</label>
+                    <label htmlFor="cena">Cena:</label>
                     <input type="text" id="cena" name="cena" requiered value={cena} onChange={handleCenaChange} />
     
                     <br />
 
-                    <label htmlFor="snack manana">snackManana:</label>
+                    <label htmlFor="snack manana">Snack Manana:</label>
                     <input type="text" id="snack manana" name="snack manana" requiered value={snackManana} onChange={handleSnackMananaChange} />
     
                     <br />
 
-                    <label htmlFor="snack tarde">snackTarde:</label>
+                    <label htmlFor="snack tarde">Snack Tarde:</label>
                     <input type="text" id="snack tarde" name="snack tarde" requiered value={snackTarde} onChange={handleSnackTardeChange} />
     
                     <br />
 
-                    <label htmlFor="snack noche">snackNoche:</label>
+                    <label htmlFor="snack noche">Snack Noche:</label>
                     <input type="text" id="snack noche" name="snack noche" requiered value={snackNoche} onChange={handleSnackNocheChange} />
     
                     <br />
@@ -87,23 +88,23 @@ function Cuestionario() {
     
                     <br />
     
-                    <label htmlFor="duracion entrenamiento">Genero:</label>
+                    <label htmlFor="duracion entrenamiento">Duración de Entrenamiento:</label>
                     <select id="duracion Entrenamiento" name="duracion Entrenamiento" requiered value={duracionEntrenamiento} onChange={handleDuracionEntrenamientoChange} />
                     <option value="">seleccione una opción</option>
-                    <option value="30min - 1 hora">duracionE1</option>
-                    <option value="1 hora - 2 hora">duracionE2</option>
-                    <option value="2 horas - 3 horas">duracionE3</option>
-                    <option value="3 horas +">duracionE4</option>
+                    <option value="30min - 1 hora">30min - 1 hora</option>
+                    <option value="1 hora - 2 hora">1 hora - 2 hora</option>
+                    <option value="2 horas - 3 horas">2 horas - 3 horas</option>
+                    <option value="3 horas +">3 horas +</option>
                     <select/>
     
                     <br />
 
-                    <label htmlFor="Horas de sueño">Edad:</label>
+                    <label htmlFor="Horas de sueño">Horas de Sueño:</label>
                     <input type="number" id="edad" name="horasSueno" requiered value={horasSueno} onChange={handleHorasSuenoChange} />
 
                     <br />
     
-                    <label htmlFor="calidad de sueño">Genero:</label>
+                    <label htmlFor="calidad de sueño">Calidad de Sueño:</label>
                     <select id="calidad de sueño" name="calidadSueno" requiered value={calidadSueno} onChange={handleCalidadSuenoChange} />
                     <option value="">seleccione una opción</option>
                     <option value="muy malo">muymalo</option>
@@ -115,18 +116,20 @@ function Cuestionario() {
     
                     <br />
 
-                    <label htmlFor="medicamento">desayuno:</label>
+                    <label htmlFor="medicamento">Medicamento:</label>
                     <input type="text" id="medicamento" name="medicamento" requiered value={Medicamento} onChange={handleMedicamentoChange} />
 
                     <br />
 
-                    <label htmlFor="dosis">desayuno:</label>
-                    <input type="float" id="deosis" name="dosis" requiered value={dosis} onChange={handleDosisChange} />
+                    <label htmlFor="dosis">Dosis:</label>
+                    <input type="float" id="dosis" name="dosis" requiered value={dosis} onChange={handleDosisChange} />
 
                     <br />
 
-                    <label htmlFor="horario">desayuno:</label>
+                    <label htmlFor="horario">Horario:</label>
                     <input type="float" id="horario" name="horario" requiered value={horario} onChange={handleHorarioChange} />
+
+                    <br />
     
                     <input type="submit" value="Enviar" />
     

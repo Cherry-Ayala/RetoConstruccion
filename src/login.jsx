@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './login.css'
 
 function Login () {
     const [ user, setUser ] = useState('a00833419@tec.mx');
@@ -26,7 +27,9 @@ function Login () {
     }
     return (
     <div>
+      <div class="center">
       <h1>Login</h1>
+      
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="user">User:</label>
@@ -36,8 +39,11 @@ function Login () {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" value={password} onChange={handlePasswordChange} />
         </div>
+        <div>
         <button type="submit">Log In</button>
+        </div>
       </form>
+      </div>
     </div>
   );
 
