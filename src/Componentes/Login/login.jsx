@@ -12,11 +12,11 @@ function Login () {
         event.preventDefault();
 
         //conectar a la api de la base de datos
-        window.location.href = '/cuestionario';
+        window.location.href = '../Doctor/Doctor';
         axios.post('api/login', {user, password})
         .then(response => {
             if(response.data.success){  
-                window.location.href = '/cuestionario';
+                window.location.href = '../Doctor/Doctor.jsx';
             }
             else{
                 console.log(response.data.message)
