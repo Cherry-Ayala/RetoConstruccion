@@ -17,13 +17,19 @@
     height: 200px;
     width: 20%;
     padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     }
     
 
 
-body {
-  background-image: url(fondo.JPG);
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    body {
+      background: url(fondo.JPG) no-repeat fixed;
+      background-size: cover;
+      font-family: "Roboto", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
