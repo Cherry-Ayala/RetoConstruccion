@@ -12,10 +12,10 @@ function Login () {
         event.preventDefault();
 
         //conectar a la api de la base de datos
-
+        window.location.href = '/cuestionario';
         axios.post('api/login', {user, password})
         .then(response => {
-            if(response.data.success){
+            if(response.data.success){  
                 window.location.href = '/cuestionario';
             }
             else{
