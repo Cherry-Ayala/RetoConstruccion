@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'; 
 import { Routes, Route } from 'react-router-dom';
 
-import Login from './login';
-import Cuestionario from './cuestionario';
+import Login from './Componentes/login';
+import Cuestionario from './Componentes/cuestionario.jsx';
 //import vistaadmin from './src/vistaadmin';
 
 

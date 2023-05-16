@@ -26,8 +26,7 @@ function Login () {
         .catch(error => {console.log(error);});
     }
     return (
-    <div>
-      <div class="center">
+    <div className='card '>
       <h1>Login</h1>
       
       <form onSubmit={handleSubmit}>
@@ -43,9 +42,9 @@ function Login () {
         <button type="submit">Log In</button>
         </div>
       </form>
-      </div>
     </div>
-  );
+    
+    );
 
 }
 
