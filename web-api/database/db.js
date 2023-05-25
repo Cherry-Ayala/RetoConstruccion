@@ -1,10 +1,10 @@
 const sql = require('mssql')
 
 const config = {
-    user: 'profesor',
-    password: 'Tec21-2021',
-    database: 'tc2005b',
-    server: 'tc2005b10.database.windows.net',
+    user: 'sa',
+    password: 'EVAunit01',
+    database: 'Medgame',
+    server: 'LAPTOP-9TRENFJI.Medgame',
     options: {
     trustedConnection: true
   }
