@@ -4,7 +4,7 @@ const config = {
     user: 'sa',
     password: 'EVAunit01',
     database: 'Medgame',
-    server: 'LAPTOP-9TRENFJI.Medgame',
+    server: 'LAPTOP-9TRENFJI',
     options: {
     trustedConnection: true
   }
