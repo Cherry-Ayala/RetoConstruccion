@@ -8,7 +8,7 @@ const router = require('./routes/route')
 const app = express()
 
 app.use(cors())
-
+console.log("Hola")
 const swaggerUi = require('swagger-ui-express'),
 swaggerDocument = require('./swagger.json');
 
@@ -29,7 +29,9 @@ var accessLogStream = fs.createWriteStream(path.join(__dirname, '/logs/access.lo
 app.use(morgan('combined', { stream: accessLogStream }))
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(router)
-
+app.get('/', (req, res) => {
+  res.send('Hola Crayola!')
+})
 const port = 4000
 
 app.listen(process.env.PORT || port , (err) => {

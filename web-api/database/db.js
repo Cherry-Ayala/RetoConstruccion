@@ -4,9 +4,9 @@ const config = {
     user: 'sa',
     password: 'EVAunit01',
     database: 'Medgame',
-    server: 'LAPTOP-9TRENFJI',
+    server: 'localhost',
     options: {
-    trustedConnection: true
+      trustServerCertificate: true
   }
 } 
 const poolPromise = new sql.ConnectionPool(config)

@@ -76,3 +76,8 @@
 ::1 - - [18/Mar/2021:00:18:06 +0000] "GET /api-docs/swagger-ui-init.js HTTP/1.1" 304 - "http://localhost:4000/api-docs/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36"
 ::1 - - [18/Mar/2021:00:18:06 +0000] "GET /api-docs/swagger-ui-standalone-preset.js HTTP/1.1" 304 - "http://localhost:4000/api-docs/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36"
 ::1 - - [18/Mar/2021:00:18:12 +0000] "GET /api/getPlayers HTTP/1.1" 200 512 "http://localhost:4000/api-docs/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36"
+::1 - - [31/May/2023:02:49:52 +0000] "GET / HTTP/1.1" 404 139 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0"
+::1 - - [31/May/2023:02:51:22 +0000] "GET / HTTP/1.1" 200 13 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0"
+::1 - - [31/May/2023:02:51:22 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0"
+::1 - - [31/May/2023:02:51:39 +0000] "GET /api/getPacientes HTTP/1.1" 200 140 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0"
+::1 - - [31/May/2023:02:53:56 +0000] "GET /api/getPacientes HTTP/1.1" 200 140 "-" "PostmanRuntime/7.32.2"
