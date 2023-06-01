@@ -1,25 +1,51 @@
-import React, {useState} from 'react';
-
-import { Pacientes } from './Pacientes';
+import React, {useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './Doctor.css'
 
+function Cuentas(){
+    const [pacientes, setPacientes] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
+    useEffect(() => {
+        fetchPacientes();
+    }, []);
 
+    const fetchPacientes = async () => {
+        try{
+            const response = await axios.get(api)
+            setPacientes(response.data)
+        } catch (error){
+            console.error('error', error);
+        }
+    };
 
-function Cuentas() {
-    const [query, setQuery] = useState(""); 
-    //console.log(Users.filter(user=> user.Nombre.toLocaleLowerCase()));
-    return ( 
-        <div className='Cuentas'>
-            <input type="text" placeholder='Search...' className="search" onChange={e=> setQuery(e.target.value)}/> 
-            <ul className='list'>
-                {Pacientes.filter((user) =>
-                    user.Nombre.toLowerCase().includes(query)
-                    ).map((user) => (
-                    <li key={user.Id_Paciente} className='listItem'> {user.Nombre} {user.Apellido_Paterno} {user.Apellido_Materno} </li>
-                ))}
-            </ul>
-        </div> 
-    ); 
+    const handleSearchChange = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
+    const filteredPacientes = pacientes.filter((pacientes) => {
+        const {id, nombre} = pacientes
+        const lowerCaseSearchQuery = searchQuery.toLowerCase();
+        return id.toString().includes(lowerCaseSearchQuery) || nombre.toLowerCase().includes(lowerCaseSearchQuery);
+    });
+
+    return (
+    <div className='Cuentas'>
+        <input type="text" placeholder='Search...' className="search" onChange={handleSearchChange} />
+        <ul className='list'>
+            {filteredPacientes.map((pacientes) => (
+            <li key={pacientes.id} className='listItem'>
+                <Link to={`/patient-detail/${patient.id}`}>{patient.nombre} {patient.apellido}</Link>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
 }
- export default Cuentas; 
+
+
+
+
+
+export default Cuentas; 
