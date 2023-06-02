@@ -2,6 +2,8 @@ import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Doctor.css'
+const { sql,poolPromise } = require('../database/db')
+
 
 function Cuentas(){
     const [pacientes, setPacientes] = useState([]);
@@ -14,6 +16,15 @@ function Cuentas(){
     const fetchPacientes = async () => {
         try{
             const response = await axios.get('/api/getPaciente/:Id_Paciente')
+            /*const pool = await poolPromise
+            const result = await pool.request()
+            .input('Id_Paciente',sql.Int, req.params.Id_Paciente)
+            .query("select * from [dbo].[Pacientes] where Id_Paciente = @Id_Paciente")
+            res.json(result.recordset)
+        } catch (error) {
+            res.status(500)
+            res.send(error.message)
+        }*/
             setPacientes(response.data)
         } catch (error){
             console.error('error', error);
