@@ -13,7 +13,7 @@ function Cuentas(){
 
     const fetchPacientes = async () => {
         try{
-            const response = await axios.get(api)
+            const response = await axios.get('/api/getPaciente/:Id_Paciente')
             setPacientes(response.data)
         } catch (error){
             console.error('error', error);
@@ -23,7 +23,6 @@ function Cuentas(){
     const handleSearchChange = (event) => {
         setSearchQuery(event.target.value);
     };
-
     const filteredPacientes = pacientes.filter((pacientes) => {
         const {id, nombre} = pacientes
         const lowerCaseSearchQuery = searchQuery.toLowerCase();
@@ -36,16 +35,12 @@ function Cuentas(){
         <ul className='list'>
             {filteredPacientes.map((pacientes) => (
             <li key={pacientes.id} className='listItem'>
-                <Link to={`/patient-detail/${patient.id}`}>{patient.nombre} {patient.apellido}</Link>
+                <Link to={`/patient-detail/${pacientes.id}`}>{pacientes.nombre} {pacientes.apellido}</Link>
                 </li>
             ))}
         </ul>
     </div>
 );
 }
-
-
-
-
 
 export default Cuentas; 

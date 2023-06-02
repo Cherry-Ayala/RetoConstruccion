@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Paciente.css'
+import axios from 'axios'
 import { wait } from '@testing-library/user-event/dist/utils';
 
 function Paciente() {
@@ -14,7 +15,7 @@ function Paciente() {
   
   const fecthPaciente = async() => {
     try{
-      const response = await axios.get(API); 
+      const response = await axios.get('/api/getPaciente/:Id_Paciente'); 
       setPaciente(response.data);
     }catch(error){
       console.error('error', error);

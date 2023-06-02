@@ -8,6 +8,9 @@ router.get('/api/getPaciente/:Id_Paciente', pacienteController.getPaciente); //S
 router.post('/api/addPaciente', pacienteController.addPaciente); //Por JSON en postman
 router.put('/api/updatePaciente/:Id_Paciente', pacienteController.updatePaciente); //Por JSON en postman los datos y http://localhost:4000/api/getPaciente/1 para aclarar el usuario al que modificar
 router.delete('/api/deletePaciente/:Id_Paciente' , pacienteController.deletePaciente);
+
+
+
 /*router.get('/api/getPlayer/:id', playerController.getPlayer);
 
 router.put('/api/updatePlayer/:id', playerController.updatePlayer);
