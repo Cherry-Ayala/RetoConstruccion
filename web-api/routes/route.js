@@ -2,6 +2,10 @@ const express =  require('express');
 const pacienteController = require('../controllers/pacienteController')
 const descansoController = require('../controllers/descansoController')
 const medicamentoController = require('../controllers/medicamentoController')
+const ejercicioController = require('../controllers/ejercicioController')
+const alimentoController = require('../controllers/alimentoController')
+
+
 
 
 const router = express.Router();
@@ -28,6 +32,29 @@ router.get('/api/getcatMed/:Id_CatMed', medicamentoController.getcatMed);
 router.post('/api/addCatMed', medicamentoController.addCatMed); //Para todo
 router.post('/api/addTomoMed', medicamentoController.addTomoMed); //Para decir si tomo el medicamento o no
 router.put('/api/updateTomoMed/:Id_CatMed', medicamentoController.updateTomoMed); //actualiza med
+
+router.get('/api/getEjercicios', ejercicioController.getEjercicios); 
+router.post('/api/addDescEjercicio', ejercicioController.addDescEjercicio); //Dice que ejericio realizo
+router.put('/api/updateDescEjercicio/:IdEjercicio', ejercicioController.updateDescEjercicio); //actualiza ejercicio
+router.post('/api/addtiempoEjercicio', ejercicioController.addtiempoEjercicio); //Agrega el tiempo en minutos
+router.put('/api/updatetiempoEjercicio/:Id', ejercicioController.updatetiempoEjercicio); //actualiza tiempo en minutos
+
+
+router.post('/api/addComida', alimentoController.addComida); //Dice comida
+router.put('/api/updateComida/:Id', alimentoController.updateComida); //actualiza comida
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
