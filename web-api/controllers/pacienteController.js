@@ -29,6 +29,19 @@ class MainController {
         }
     }
 
+    async getPacienteNom(req , res){
+      try {
+          const pool = await poolPromise
+          const result = await pool.request()
+          .input('Nombre',sql.VarChar, req.params.Nombre)
+          .query("select * from [dbo].[Pacientes] where Nombre = @Nombre")
+          res.json(result.recordset)
+      } catch (error) {
+          res.status(500)
+          res.send(error.message)
+      }
+  }
+
     async addPaciente(req , res){
         try {
           if(req.body.Nombre != null && req.body.Apellido_Paterno != null && req.body.Apellido_Materno != null && req.body.Fecha_Nacimiento != null) {

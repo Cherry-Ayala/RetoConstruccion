@@ -1,13 +1,46 @@
 const express =  require('express');
 const pacienteController = require('../controllers/pacienteController')
+const descansoController = require('../controllers/descansoController')
+const medicamentoController = require('../controllers/medicamentoController')
 
 
 const router = express.Router();
 router.get('/api/getPacientes', pacienteController.getPacientes); //http://localhost:4000/api/getPacientes
 router.get('/api/getPaciente/:Id_Paciente', pacienteController.getPaciente); //Se usa como ej: http://localhost:4000/api/getPaciente/1
-router.post('/api/addPaciente', pacienteController.addPaciente); //Por JSON en postman
+router.get('/api/getPacienteNom/:Nombre', pacienteController.getPacienteNom); //Se usa como ej: http://localhost:4000/api/getPaciente/1
+router.post('/api/addPaciente', pacienteController.addPaciente); //http://localhost:4000/api/addPaciente y por JSON en postman
 router.put('/api/updatePaciente/:Id_Paciente', pacienteController.updatePaciente); //Por JSON en postman los datos y http://localhost:4000/api/getPaciente/1 para aclarar el usuario al que modificar
 router.delete('/api/deletePaciente/:Id_Paciente' , pacienteController.deletePaciente);
+
+router.get('/api/getDescansos', descansoController.getDescansos); 
+router.get('/api/getDescanso/:Id_Descanso', descansoController.getDescanso);
+router.post('/api/addDescanso', descansoController.addDescanso); //Para todo
+router.post('/api/addHorasDormidas', descansoController.addHorasDormidas); //Para las horas dormidas
+router.post('/api/addCalidadDescanso', descansoController.addCalidadDescanso); //Para la calidad del descanso
+router.post('/api/addFechaDescanso', descansoController.addFechaDescanso); //Para la Fecha del descanso
+router.put('/api/updateDescanso/:Id_Descanso', descansoController.updateDescanso); //Actualiza todo lo relevante
+router.put('/api/updateHorasDormidas/:Id_Descanso', descansoController.updateHorasDormidas); //Actualiza solo horas dormidas
+router.put('/api/updateCalidadDescanso/:Id_Descanso', descansoController.updateCalidadDescanso); //Actualiza solo calidad descanso
+router.put('/api/updateFechaDescanso/:Id_Descanso', descansoController.updateFechaDescanso); //Actualiza solo Fecha descanso
+
+router.get('/api/getcatMeds', medicamentoController.getcatMeds); 
+router.get('/api/getcatMed/:Id_CatMed', medicamentoController.getcatMed); 
+router.post('/api/addCatMed', medicamentoController.addCatMed); //Para todo
+router.post('/api/addTomoMed', medicamentoController.addTomoMed); //Para decir si tomo el medicamento o no
+router.put('/api/updateTomoMed/:Id_CatMed', medicamentoController.updateTomoMed); //actualiza med
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

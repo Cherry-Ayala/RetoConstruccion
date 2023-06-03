@@ -15,8 +15,8 @@ function Paciente() {
   
   const fecthPaciente = async() => {
     try{
-      const response = await axios.get('/api/getPaciente/:Id_Paciente'); 
-      setPaciente(response.data);
+     // const response = await axios.get('/api/getPaciente/:Id_Paciente'); 
+     // setPaciente(response.data);
     }catch(error){
       console.error('error', error);
     }

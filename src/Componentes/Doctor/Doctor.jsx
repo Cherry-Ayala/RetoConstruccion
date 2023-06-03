@@ -2,29 +2,21 @@ import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Doctor.css'
-const { sql,poolPromise } = require('../database/db')
+const pacienteController = require('../web-api/controllers/pacienteController')
+//const { sql,poolPromise } = require('../database/db')
 
 
 function Cuentas(){
     const [pacientes, setPacientes] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
 
-    useEffect(() => {
-        fetchPacientes();
-    }, []);
+    //useEffect(() => {
+    //    fetchPacientes();
+   // }, []);
 
     const fetchPacientes = async () => {
         try{
-            const response = await axios.get('/api/getPaciente/:Id_Paciente')
-            /*const pool = await poolPromise
-            const result = await pool.request()
-            .input('Id_Paciente',sql.Int, req.params.Id_Paciente)
-            .query("select * from [dbo].[Pacientes] where Id_Paciente = @Id_Paciente")
-            res.json(result.recordset)
-        } catch (error) {
-            res.status(500)
-            res.send(error.message)
-        }*/
+            const response = await axios.get('http://localhost:4000/api/getPaciente/Id_Paciente')
             setPacientes(response.data)
         } catch (error){
             console.error('error', error);
