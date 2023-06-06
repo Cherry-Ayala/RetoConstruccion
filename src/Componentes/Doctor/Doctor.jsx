@@ -2,7 +2,7 @@ import React, {useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Doctor.css'
-const pacienteController = require('../web-api/controllers/pacienteController')
+//const pacienteController = require('../web-api/controllers/pacienteController')
 //const { sql,poolPromise } = require('../database/db')
 
 
@@ -10,9 +10,9 @@ function Cuentas(){
     const [pacientes, setPacientes] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
 
-    //useEffect(() => {
-    //    fetchPacientes();
-   // }, []);
+    useEffect(() => {
+        fetchPacientes();
+    }, []);
 
     const fetchPacientes = async () => {
         try{
