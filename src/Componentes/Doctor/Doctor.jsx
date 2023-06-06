@@ -16,7 +16,7 @@ function Cuentas(){
 
     const fetchPacientes = async () => {
         try{
-            const response = await axios.get('http://localhost:4000/api/getPaciente/Id_Paciente')
+            const response = await axios.get('http://localhost:4000/api/getPaciente/Id_Paciente') //Mostrar pacientes
             setPacientes(response.data)
         } catch (error){
             console.error('error', error);
