@@ -6,7 +6,7 @@ import { wait } from '@testing-library/user-event/dist/utils';
 
 function Paciente() {
 
-  const {id} = useParams(); 
+  const {Id_Paciente} = useParams(); 
   const [Paciente, setPaciente] = useState(""); 
 
   useEffect(() => {
@@ -15,8 +15,8 @@ function Paciente() {
   
   const fecthPaciente = async() => {
     try{
-     // const response = await axios.get('/api/getPaciente/:Id_Paciente'); 
-     // setPaciente(response.data);
+      const response = await axios.get('/api/getPaciente/:Id_Paciente'); 
+      setPaciente(response.data);
     }catch(error){
       console.error('error', error);
     }
