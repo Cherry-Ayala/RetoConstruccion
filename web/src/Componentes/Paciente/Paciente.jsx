@@ -23,7 +23,7 @@ function Paciente() {
   }; 
 
   if(!Paciente){
-    return <><div>erorr...</div></>
+    return <><div>error...</div></>
   }
 
   return (

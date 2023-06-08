@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.card {
+.card-login{
   border: 5px solid;
   border-radius: 25px;
   border-color: rgba(0, 187, 255, 0.684);

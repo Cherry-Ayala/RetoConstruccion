@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './Componentes/Login/login.jsx';
 import Doctor from './Componentes/Doctor/Doctor.jsx';
 import Paciente from './Componentes/Paciente/Paciente.jsx'
+import Registro from './Componentes/Registro/Registro.jsx';
 //import vistaadmin from './src/vistaadmin';
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route exact path='/' element={<Login />} />
           <Route exact path='/Doctor' element={<Doctor />} />
           <Route exact path='/Paciente' element={<Paciente/>} />
+          <Route exact path='/Registro' element={<Registro/>} />
         </Routes>
       </div>
 
