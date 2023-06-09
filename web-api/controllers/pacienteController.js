@@ -63,6 +63,28 @@ class MainController {
         }
       }
 
+
+
+      async addPacienteNom(req , res){
+        try {
+          if(req.body.Nombre != null) {
+            const pool = await poolPromise
+            const result = await pool.request()
+            .input('Nombre',sql.VarChar, req.body.Nombre)
+
+            .query("insert into [dbo].[Pacientes] (Nombre) values(@Nombre)")
+            res.json(result)
+          } else {
+            res.send('Por favor llena todos los datos!')
+          }
+        } catch (error) {
+          res.status(500)
+          res.send(error.message)
+        }
+      }
+
+
+
       async updatePaciente(req, res){
         try {
           if(req.body.Id_Paciente != null, req.body.Nombre != null && req.body.Apellido_Paterno != null && req.body.Apellido_Materno != null && req.body.Fecha_Nacimiento != null) {
