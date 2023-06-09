@@ -26,7 +26,7 @@ function Login () {
         // .catch(error => {console.log(error);});
     }
     return (
-    <div className='card '>
+    <div className='card-login'>
       <h1>Login</h1>
       
       <form onSubmit={handleSubmit}>
