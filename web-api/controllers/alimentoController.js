@@ -4,6 +4,18 @@ const { sql,poolPromise } = require('../database/db')
 
 class MainController {
 
+  async getAlimentos(req, res){
+    try {
+        const pool = await poolPromise
+        const result = await pool.request()
+        .query("select * from [dbo].[catAlimentos]")
+        res.json(result.recordset)
+    } catch (error) {
+      res.status(500)
+      res.send(error.message)
+    }
+  }
+
 async addComida(req , res){
     try {
         if(req.body.Descripcion != null && req.body.Id != null)
