@@ -26,23 +26,23 @@ function Login () {
         // .catch(error => {console.log(error);});
     }
     return (
-    <div className='card-login'>
-      <h1>Login</h1>
-      
-      <form onSubmit={handleSubmit}>
-        <div className='User'>
-          <label htmlFor="user">User:</label>
-          <input type="email" id="user" value={user} onChange={handleUserChange} />
+
+      <div className='login-container card-block align'>
+        <div className='card-login card d-inline-flex p-2'>
+          <h1>Login</h1>
+          <form className='form-control-lg'>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Correo</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value={password} onChange={handlePasswordChange}/>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" value={password} onChange={handlePasswordChange}  />
+            </div>
+            <button type="submit" class="boton btn btn-primary">Submit</button>
+          </form>
         </div>
-        <div className='Password'>
-          <label htmlFor="password">Password:</label>
-          <input type="password" id="password" value={password} onChange={handlePasswordChange} />
-        </div>
-        <div className='Button'>
-        <button type="submit">Log In</button>
-        </div>
-      </form>
-    </div>
+      </div>
     
     );
 

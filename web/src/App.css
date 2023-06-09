@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -35,4 +36,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.boton{
+  background: hsl(205, 23%, 45%); 
+  color: #f3f3f3;
+  font-weight: bold; 
+  font-size: 28px;
+  padding: 7px 15px;
+  border: 2px solid;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+
 }

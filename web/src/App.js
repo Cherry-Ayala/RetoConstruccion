@@ -1,21 +1,41 @@
 import 'bootstrap/dist/css/bootstrap.css';
 
 import React from 'react'; 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate, Link, useLocation } from 'react-router-dom';
 
 import Login from './Componentes/Login/login.jsx';
 import Doctor from './Componentes/Doctor/Doctor.jsx';
 import Paciente from './Componentes/Paciente/Paciente.jsx'
 import Registro from './Componentes/Registro/Registro.jsx';
+import Bienvenida from './Componentes/Bienvenida/Bienvenida.jsx'
 //import vistaadmin from './src/vistaadmin';
 
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate(); 
+
+  const handleLoginClick = () => {
+    navigate('/Login')
+  }
+
+  const handleRegisterClick = () => {
+    navigate('/Registro')
+  }
+
+  // const hideButtons = location.pathname !== '/Login' && location.pathname !== '/Registro' && location.pathname !== '/Doctor' && location.pathname !== '/Paciente';
+  const hideButtons = location.pathname !== '/';
   return (
 
       <div className="app">
+        {!hideButtons && (
+          <div>
+            <button className='boton' onClick={() => window.location.href = '/Login'}>Login</button>
+            <button className='boton' onClick={() => window.location.href = '/Registro'}>Register</button>
+          </div>
+        )}
         <Routes>
-          {/* <Route exact path='/' element={<Home/>} /> */}
+          <Route exact path='/' element={<Bienvenida/>} />
           <Route exact path='/Login' element={<Login />} />
           <Route exact path='/Doctor' element={<Doctor />} />
           <Route exact path='/Paciente' element={<Paciente/>} />

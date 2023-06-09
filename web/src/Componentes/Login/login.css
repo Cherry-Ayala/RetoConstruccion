@@ -11,12 +11,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.card-login{
+/* .card-login{
   border: 5px solid;
   border-radius: 25px;
-  border-color: rgba(0, 187, 255, 0.684);
+  border-color: hsl(205,81%,78%); 
   margin: auto;
-  background-color: rgba(0, 187, 255, 0.684);
+  background: hsl(205,81%,78%); 
   height: 300px;
   width: 20%;
   padding: 10px;
@@ -24,8 +24,39 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+} */
+.login-container{
+  margin-top: 10%;
+} 
+
+.card-login{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 50%;
+
+  background: hsl(205,81%,78%); 
+  color: #f3f3f3;
+  font-weight: bold; 
+  font-size: 28px;
+  padding: 7px 15px;
+  border: 2px solid;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
 }
-    
+
+.boton{
+  background: hsl(205, 23%, 45%); 
+  color: #f3f3f3;
+  font-weight: bold; 
+  font-size: 28px;
+  padding: 7px 15px;
+  border: 2px solid;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
 div{
   margin: 20px;
 }
