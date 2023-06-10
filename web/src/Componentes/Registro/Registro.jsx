@@ -31,12 +31,12 @@ function Registro(){
       var v4 = inputRef4.current.value
 
       console.log(inputRef5.current.value);
-      var Usuario = inputRef5.current.value
+      var v5 = inputRef5.current.value
 
       console.log(inputRef6.current.value);
-      var Contraseña = inputRef6.current.value
+      var v6 = inputRef6.current.value
 
-      function sendDataToAPI(v1, v2, v3, v4) {
+      function sendDataToAPI(v1, v2, v3, v4, v5, v6) {
         const apiUrl = 'http://localhost:4000/api/addPacienteLog'; // Replace with your API endpoint
       
         // Create the request body with the input data
@@ -44,7 +44,9 @@ function Registro(){
           "v1": v1, 
           "v2" : v2,
           "v3" : v3,
-          "v4" : v4
+          "v4" : v4,
+          "v5" : v5,
+          "v6" : v6
         };
       
         // Send the POST request to the API using Axios
@@ -60,32 +62,10 @@ function Registro(){
           });
       }
 
-      sendDataToAPI(v1, v2, v3, v4);
+      sendDataToAPI(v1, v2, v3, v4, v5, v6);
 
 
-      function sendDataToAPI2(Usuario, Contraseña) {
-        const apiUrl = 'http://localhost:4000/api/addLogin'; // Replace with your API endpoint
       
-        // Create the request body with the input data
-        const requestBody = {
-          "Usuario" : Usuario,
-          "Contraseña" : Contraseña
-        };
-      
-        // Send the POST request to the API using Axios
-        axios.post(apiUrl, requestBody)
-          .then(response => {
-            // Handle the API response
-            console.log('API response:', response.data);
-            // Do something with the response data
-          })
-          .catch(error => {
-            // Handle any errors that occurred during the API request
-            console.error('API request error:', error);
-          });
-      }
-
-      sendDataToAPI2(Usuario, Contraseña);
     }
   
 

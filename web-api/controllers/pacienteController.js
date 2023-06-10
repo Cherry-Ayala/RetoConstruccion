@@ -65,15 +65,18 @@ class MainController {
 
       async addPacienteLog(req , res){
         try {
-          if(req.body.v1 != null && req.body.v2 != null && req.body.v3 != null && req.body.v4 != null) {
+          if(req.body.v1 != null && req.body.v2 != null && req.body.v3 != null && req.body.v4 != null && req.body.v5 != null && req.body.v6 != null) {
             const pool = await poolPromise
             const result = await pool.request()
             .input('v1',sql.VarChar, req.body.v1)
             .input('v2',sql.VarChar, req.body.v2)
             .input('v3',sql.VarChar, req.body.v3)
             .input('v4',sql.Date, req.body.v4)
+            .input('v5',sql.VarChar, req.body.v5)
+            .input('v6',sql.VarChar, req.body.v6)
+            
 
-            .query("exec insTuTabla @v1, @v2, @v3, @v4")
+            .query("exec insTabla @v1, @v2, @v3, @v4, @v5, @v6")
             res.json(result)
           } else {
             res.send('Por favor llena todos los datos!')

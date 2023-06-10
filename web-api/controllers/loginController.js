@@ -47,7 +47,7 @@ async updateLogin(req, res){
         .input('nuevoApellido_Paterno',sql.VarChar, req.body.Apellido_Paterno)
         .input('nuevoApellido_Materno',sql.VarChar, req.body.Apellido_Materno)
         .input('nuevaFecha_Nacimiento',sql.Date, req.body.Fecha_Nacimiento)
-        .query("update [dbo].[Pacientes] set Nombre = @nuevoNombre, Apellido_Paterno = @nuevoApellido_Paterno, Apellido_Materno = @nuevoApellido_Materno, Fecha_Nacimiento = @nuevaFecha_Nacimiento where Id_Paciente = @Id_Paciente")
+        .query("update [dbo].[Log_in] set Nombre = @nuevoNombre, Apellido_Paterno = @nuevoApellido_Paterno, Apellido_Materno = @nuevoApellido_Materno, Fecha_Nacimiento = @nuevaFecha_Nacimiento where Id_Paciente = @Id_Paciente")
         res.json(result)
         console.log('Id_Pacientes' + req.params.id)
       } else {
