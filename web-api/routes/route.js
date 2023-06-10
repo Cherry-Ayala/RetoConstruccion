@@ -4,6 +4,8 @@ const descansoController = require('../controllers/descansoController')
 const medicamentoController = require('../controllers/medicamentoController')
 const ejercicioController = require('../controllers/ejercicioController')
 const alimentoController = require('../controllers/alimentoController')
+const loginController = require('../controllers/loginController')
+
 
 
 
@@ -13,6 +15,8 @@ router.get('/api/getPacientes', pacienteController.getPacientes); //http://local
 router.get('/api/getPaciente/:Id_Paciente', pacienteController.getPaciente); //Se usa como ej: http://localhost:4000/api/getPaciente/1
 router.get('/api/getPacienteNom/:Nombre', pacienteController.getPacienteNom); //Se usa como ej: http://localhost:4000/api/getPaciente/1
 router.post('/api/addPaciente', pacienteController.addPaciente); //http://localhost:4000/api/addPaciente y por JSON en postman
+router.post('/api/addPacienteLog', pacienteController.addPacienteLog); //http://localhost:4000/api/addPacienteLog y por JSON en postman
+
 router.post('/api/addPacienteNom', pacienteController.addPacienteNom); //http://localhost:4000/api/addPacienteNom y por JSON en postman
 router.put('/api/updatePaciente/:Id_Paciente', pacienteController.updatePaciente); //Por JSON en postman los datos y http://localhost:4000/api/getPaciente/1 para aclarar el usuario al que modificar
 router.delete('/api/deletePaciente/:Id_Paciente' , pacienteController.deletePaciente);
@@ -46,6 +50,7 @@ router.post('/api/addComida', alimentoController.addComida); //Dice comida
 router.put('/api/updateComida/:Id', alimentoController.updateComida); //actualiza comida
 
 
+router.post('/api/addLogin', loginController.addLogin); //Agraga usuario y contraseña http://localhost:4000/api/addLogin
 
 
 

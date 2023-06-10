@@ -43,7 +43,7 @@ async updateComida(req, res){
         const result = await pool.request()
         .input('Id',sql.Int, req.params.Id)
         .input('newDescripcion',sql.VarChar, req.body.Descripcion)
-        .query("update [dbo].[catMedicamentos] set Descripcion = @newDescripcion where Id = @Id")
+        .query("update [dbo].[catAlimentos] set Descripcion = @newDescripcion where Id = @Id")
         res.json(result)
         console.log('Id' + req.params.id)
       } else {
@@ -57,5 +57,5 @@ async updateComida(req, res){
 
 }
 
-const catMedicamentosController = new MainController()
-module.exports = catMedicamentosController;
+const alimentoController = new MainController()
+module.exports = alimentoController;

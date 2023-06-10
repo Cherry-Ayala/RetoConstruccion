@@ -10,31 +10,41 @@ function Registro(){
     const inputRef2 = useRef(null);
     const inputRef3 = useRef(null);
     const inputRef4 = useRef(null);
+    
+    const inputRef5 = useRef(null);
+    const inputRef6 = useRef(null);
+
 
 
     function handleClick() {
       
       console.log(inputRef.current.value);
-      var Nombre = inputRef.current.value
+      var v1 = inputRef.current.value
 
       console.log(inputRef2.current.value);
-      var Apellido_Paterno = inputRef2.current.value
+      var v2 = inputRef2.current.value
 
       console.log(inputRef3.current.value);
-      var Apellido_Materno = inputRef3.current.value
+      var v3 = inputRef3.current.value
 
-      console.log(inputRef.current.value);
-      var Fecha_Nacimiento = inputRef4.current.value
+      console.log(inputRef4.current.value);
+      var v4 = inputRef4.current.value
 
-      function sendDataToAPI(Nombre, Apellido_Paterno, Apellido_Materno, Fecha_Nacimiento) {
-        const apiUrl = 'http://localhost:4000/api/addPaciente'; // Replace with your API endpoint
+      console.log(inputRef5.current.value);
+      var Usuario = inputRef5.current.value
+
+      console.log(inputRef6.current.value);
+      var Contraseña = inputRef6.current.value
+
+      function sendDataToAPI(v1, v2, v3, v4) {
+        const apiUrl = 'http://localhost:4000/api/addPacienteLog'; // Replace with your API endpoint
       
         // Create the request body with the input data
         const requestBody = {
-          "Nombre": Nombre, 
-          "Apellido_Paterno" : Apellido_Paterno,
-          "Apellido_Materno" : Apellido_Materno,
-          "Fecha_Nacimiento" : Fecha_Nacimiento
+          "v1": v1, 
+          "v2" : v2,
+          "v3" : v3,
+          "v4" : v4
         };
       
         // Send the POST request to the API using Axios
@@ -50,7 +60,32 @@ function Registro(){
           });
       }
 
-      sendDataToAPI(Nombre, Apellido_Paterno, Apellido_Materno, Fecha_Nacimiento);
+      sendDataToAPI(v1, v2, v3, v4);
+
+
+      function sendDataToAPI2(Usuario, Contraseña) {
+        const apiUrl = 'http://localhost:4000/api/addLogin'; // Replace with your API endpoint
+      
+        // Create the request body with the input data
+        const requestBody = {
+          "Usuario" : Usuario,
+          "Contraseña" : Contraseña
+        };
+      
+        // Send the POST request to the API using Axios
+        axios.post(apiUrl, requestBody)
+          .then(response => {
+            // Handle the API response
+            console.log('API response:', response.data);
+            // Do something with the response data
+          })
+          .catch(error => {
+            // Handle any errors that occurred during the API request
+            console.error('API request error:', error);
+          });
+      }
+
+      sendDataToAPI2(Usuario, Contraseña);
     }
   
 
@@ -64,26 +99,26 @@ function Registro(){
                 <form className='form-control-lg'>
                     <div className="row">
                         <div className="col">
-                       <input type="text" className='form-control' ref = {inputRef}  placeholder='Nombre'/>
+                       <input type="text" className='form-control' ref = {inputRef}  placeholder='Nombre...'/>
                         </div>
                         <div className="col">
-                            <input type="text" className='form-control' ref = {inputRef2} placeholder='Apellido_Paterno'/>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col">
-                            <input type="text" className='form-control' ref = {inputRef3} placeholder='Apellido_Materno'/>                         
-                        </div>
-                        <div className="col">
-                            <input type="text" className='form-control' ref = {inputRef4} placeholder='Fecha_Nacimiento'/>                      
+                            <input type="text" className='form-control' ref = {inputRef2} placeholder='Apellido paterno...'/>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col">
-                            <input type="text" className='form-control' placeholder='Usuario...'/>
+                            <input type="text" className='form-control' ref = {inputRef3} placeholder='Apellido materno...'/>                         
                         </div>
                         <div className="col">
-                            <input type="text" className='form-control' placeholder='Contraseña...'/>
+                            <input type="text" className='form-control' ref = {inputRef4} placeholder='Fecha de nacimiento...'/>                      
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <input type="text" className='form-control' ref = {inputRef5} placeholder='Usuario...'/>
+                        </div>
+                        <div className="col">
+                            <input type="text" className='form-control' ref = {inputRef6} placeholder='Contraseña...'/>
                         </div>
                     </div>
                     <button onClick={handleClick} className='boton'> Submit </button>
