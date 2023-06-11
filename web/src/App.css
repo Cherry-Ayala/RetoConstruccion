@@ -1,4 +1,7 @@
-
+body{
+  background: url('./Imagenes/medgame.png');
+  background-size: cover;
+}
 .App {
   text-align: center;
 }

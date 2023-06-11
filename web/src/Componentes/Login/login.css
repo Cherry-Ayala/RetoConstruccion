@@ -5,7 +5,7 @@
 }
 
 body {
-  background: url(../../Imagenes/fondo.JPG) no-repeat fixed;
+  background: url(../../Imagenes/fondo.JPG) ;
   background-size: cover;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;

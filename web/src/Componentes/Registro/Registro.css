@@ -1,13 +1,11 @@
 .registro-container{
     margin-top: 10%;
-    
 }
 
 .registro-form{
     padding-top: 2%;
     padding-bottom: 2%;
     width: 80%;
-
     background: hsl(205,81%,78%); 
     color: #f3f3f3;
     font-weight: bold; 

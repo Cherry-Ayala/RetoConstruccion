@@ -27,21 +27,21 @@ function App() {
   const hideButtons = location.pathname !== '/';
   return (
 
-      <div className="app">
-        {!hideButtons && (
-          <div>
-            <button className='boton' onClick={() => window.location.href = '/Login'}>Login</button>
-            <button className='boton' onClick={() => window.location.href = '/Registro'}>Register</button>
-          </div>
-        )}
-        <Routes>
-          <Route exact path='/' element={<Bienvenida/>} />
-          <Route exact path='/Login' element={<Login />} />
-          <Route exact path='/Doctor' element={<Doctor />} />
-          <Route exact path='/Paciente' element={<Paciente/>} />
-          <Route exact path='/Registro' element={<Registro/>} />
-        </Routes>
-      </div>
+    <div className="app">
+      {!hideButtons && (
+        <div>
+          <button className='boton' onClick={() => window.location.href = '/Login'}>Login</button>
+          <button className='boton' onClick={() => window.location.href = '/Registro'}>Register</button>
+        </div>
+      )}
+      <Routes>
+        <Route exact path='/' element={<Bienvenida/>} />
+        <Route exact path='/Login' element={<Login />} />
+        <Route exact path='/Doctor' element={<Doctor />} />
+        <Route exact path='/Paciente' element={<Paciente/>} />
+        <Route exact path='/Registro' element={<Registro/>} />
+      </Routes>
+    </div>
 
   );
 }
