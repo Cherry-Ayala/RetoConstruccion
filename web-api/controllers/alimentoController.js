@@ -55,7 +55,126 @@ async updateComida(req, res){
     }
   }
 
+
+  async addDes(req , res){
+    try {
+        if(req.body.v1 != null)
+        {
+        const pool = await poolPromise
+        const result = await pool.request()
+        .input('v1',sql.VarChar, req.body.v1)
+        .query("exec insDe @v1;")
+        res.json(result)
+        }
+        else {
+            res.send('Por favor llena todos los datos!')
+          }
+    } catch (error) {
+        res.status(500)
+        res.send(error.message)
+    }
 }
+
+async addCom(req , res){
+  try {
+      if(req.body.v1 != null)
+      {
+      const pool = await poolPromise
+      const result = await pool.request()
+      .input('v1',sql.VarChar, req.body.v1)
+      .query("exec insCo @v1;")
+      res.json(result)
+      }
+      else {
+          res.send('Por favor llena todos los datos!')
+        }
+  } catch (error) {
+      res.status(500)
+      res.send(error.message)
+  }
+}
+
+
+async addCe(req , res){
+  try {
+      if(req.body.v1 != null)
+      {
+      const pool = await poolPromise
+      const result = await pool.request()
+      .input('v1',sql.VarChar, req.body.v1)
+      .query("exec insCe @v1;")
+      res.json(result)
+      }
+      else {
+          res.send('Por favor llena todos los datos!')
+        }
+  } catch (error) {
+      res.status(500)
+      res.send(error.message)
+  }
+}
+
+
+async addSnackDe(req , res){
+  try {
+      if(req.body.v1 != null)
+      {
+      const pool = await poolPromise
+      const result = await pool.request()
+      .input('v1',sql.VarChar, req.body.v1)
+      .query("exec insSnackDe @v1;")
+      res.json(result)
+      }
+      else {
+          res.send('Por favor llena todos los datos!')
+        }
+  } catch (error) {
+      res.status(500)
+      res.send(error.message)
+  }
+}
+
+async addSnackCo(req , res){
+  try {
+      if(req.body.v1 != null)
+      {
+      const pool = await poolPromise
+      const result = await pool.request()
+      .input('v1',sql.VarChar, req.body.v1)
+      .query("exec insSnackCo @v1;")
+      res.json(result)
+      }
+      else {
+          res.send('Por favor llena todos los datos!')
+        }
+  } catch (error) {
+      res.status(500)
+      res.send(error.message)
+  }
+}
+
+async addSnackNo(req , res){
+  try {
+      if(req.body.v1 != null)
+      {
+      const pool = await poolPromise
+      const result = await pool.request()
+      .input('v1',sql.VarChar, req.body.v1)
+      .query("exec insSnackNo @v1;")
+      res.json(result)
+      }
+      else {
+          res.send('Por favor llena todos los datos!')
+        }
+  } catch (error) {
+      res.status(500)
+      res.send(error.message)
+  }
+}
+
+}
+
+
 
 const alimentoController = new MainController()
 module.exports = alimentoController;
