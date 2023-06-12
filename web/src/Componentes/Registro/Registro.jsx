@@ -67,9 +67,7 @@ function Registro(){
 
       
     }
-  
 
-    
 
     return(
         <div className="registro-container card-block align">
@@ -101,6 +99,32 @@ function Registro(){
                             <input type="text" className='form-control' ref = {inputRef6} placeholder='Contraseña...'/>
                         </div>
                     </div>
+                    <div className="row">
+                        <div className='col'>
+                            <label for="exampleFormControlSelect1">¿Tomas medicamento?</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                            <option>SI</option>
+                            <option>NO</option>
+                            </select>
+                        </div>
+                        <div className='col'>
+                            <label for="exampleFormControlSelect1">Ingresa fecha de inicio</label>
+                            <input type="text" className='form-control' placeholder='Fecha...'/>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className='col'>
+                            <label for="exampleFormControlSelect1">Ingresa nombre de medicamento</label>
+                            <input type="text" className='form-control' placeholder='Nombre...'/>
+                        </div>
+                        <div className="col">
+                            <label for="exampleFormControlTextarea1">Ingres instrucciones de doctor</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder='Horario, Descripción, Receta, etc...'></textarea>
+                        </div>
+
+                    </div>
+
                     <button onClick={handleClick} className='boton'> Submit </button>
                 </form>
                
