@@ -56,13 +56,12 @@ class MainController {
 
       async addTomoMed(req , res){
         try {
-            if(req.body.tomoMed != null && req.body.Id_MedPac != null)
+            if(req.body.v1 != null)
             {
             const pool = await poolPromise
             const result = await pool.request()
-            .input('tomoMed',sql.VarChar, req.body.tomoMed)
-            .input('Id_MedPac',sql.Int, req.body.Id_MedPac)
-            .query("INSERT INTO [dbo].[catMedicamentos] (tomoMed, Id_MedPac) VALUES(@tomoMed, @Id_MedPac)")
+            .input('v1',sql.VarChar, req.body.v1)
+            .query("exec insMed @v1")
             res.json(result)
             }
             else {

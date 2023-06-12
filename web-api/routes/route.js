@@ -24,12 +24,15 @@ router.delete('/api/deletePaciente/:Id_Paciente' , pacienteController.deletePaci
 router.get('/api/getDescansos', descansoController.getDescansos); 
 router.get('/api/getDescanso/:Id_Descanso', descansoController.getDescanso);
 router.post('/api/addDescanso', descansoController.addDescanso); //Para todo
+router.post('/api/addCalDes', descansoController.addCalDes); //Para todo
+
 router.post('/api/addHorasDormidas', descansoController.addHorasDormidas); //Para las horas dormidas
 router.post('/api/addCalidadDescanso', descansoController.addCalidadDescanso); //Para la calidad del descanso
 router.post('/api/addFechaDescanso', descansoController.addFechaDescanso); //Para la Fecha del descanso
 router.put('/api/updateDescanso/:Id_Descanso', descansoController.updateDescanso); //Actualiza todo lo relevante
 router.put('/api/updateHorasDormidas/:Id_Descanso', descansoController.updateHorasDormidas); //Actualiza solo horas dormidas
-router.put('/api/updateCalidadDescanso/:Id_Descanso', descansoController.updateCalidadDescanso); //Actualiza solo calidad descanso
+router.put('/api/updateCalidad', descansoController.updateCalidad); //Actualiza solo horas dormidas
+//router.put('/api/updateCalidadDescanso/:Id_Descanso', descansoController.updateCalidadDescanso); //Actualiza solo calidad descanso
 router.put('/api/updateFechaDescanso/:Id_Descanso', descansoController.updateFechaDescanso); //Actualiza solo Fecha descanso
 
 router.get('/api/getcatMeds', medicamentoController.getcatMeds); 

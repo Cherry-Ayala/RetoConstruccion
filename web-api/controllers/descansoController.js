@@ -32,15 +32,33 @@ class MainController {
 
     async addDescanso(req , res){
         try {
-          if(req.body.Horas_Dormidas != null && req.body.Calidad_Descanso != null && req.body.FechaDescanso != null && req.body.Id_Paciente != null) {
+          if(req.body.v1 != null) {
             const pool = await poolPromise
             const result = await pool.request()
-            .input('Horas_Dormidas',sql.Int, req.body.Horas_Dormidas)
-            .input('Calidad_Descanso',sql.VarChar, req.body.Calidad_Descanso)
-            .input('FechaDescanso',sql.Date, req.body.FechaDescanso)
-            .input('Id_Paciente',sql.Int, req.body.Id_Paciente)
+            .input('v1',sql.Int, req.body.v1)
 
-            .query("insert into [dbo].[Descanso] values(@Horas_Dormidas, @Calidad_Descanso, @FechaDescanso, @Id_Paciente)")
+
+            .query("exec insDormid @v1;")
+            res.json(result)
+          } else {
+            res.send('Por favor llena todos los datos!')
+          }
+        } catch (error) {
+          res.status(500)
+          res.send(error.message)
+        }
+      }
+
+
+      async addCalDes(req , res){
+        try {
+          if(req.body.v1 != null) {
+            const pool = await poolPromise
+            const result = await pool.request()
+            .input('v1',sql.VarChar, req.body.v1)
+
+
+            .query("exec insCalDes @v1;")
             res.json(result)
           } else {
             res.send('Por favor llena todos los datos!')
@@ -156,7 +174,28 @@ class MainController {
       }
 
 
-      async updateCalidadDescanso(req, res){
+      async updateCalidad(req, res){
+        try {
+          if(req.body.v1 != null) {
+          const pool = await poolPromise
+            const result = await pool.request()
+            .input('v1',sql.VarChar, req.body.v1)
+            
+            .query("exec insCalidad @v1;")
+            res.json(result)
+          } else {
+            res.send('Todos los campos obligatorios!')
+          }
+        } catch (error) {
+          res.status(500)
+          res.send(error.message)
+        }
+      }
+
+
+
+
+     /* async updateCalidadDescanso(req, res){
         try {
           if(req.body.Id_Descanso != null, req.body.Calidad_Descanso != null) {
           const pool = await poolPromise
@@ -173,7 +212,7 @@ class MainController {
           res.status(500)
           res.send(error.message)
         }
-      }
+      }*/
 
       async updateFechaDescanso(req, res){
         try {
