@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Routes, Route, useNavigate } from 'react-router-dom';
 import './login.css'
 import Unity from '../../Unity/Unity.jsx'
 
 function Login () {
 
-  const handleClick = () => {
-    window.location.href(Unity);
-  }
-
+  // const handleClick = () => {
+  // }
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [redirectUrl, setRedirectUrl] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
+  
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
-
+  
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    window.location.href = '/Doctor';
+    
     axios
       .post('/api/login', { username, password }) //poner api correcta
       .then(response => {
@@ -42,11 +42,12 @@ function Login () {
         setErrorMessage('An error occurred. Please try again.');
       });
   };
+
   return (
     <div className="login-container card-block align">
       <div className="card-login card d-inline-flex p-2">
         <h1>Login</h1>
-        <form className="form-control-lg" onSubmit={handleClick}>
+        <form className="form-control-lg">
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Usuario</label>
             <input
@@ -70,7 +71,7 @@ function Login () {
               onChange={handlePasswordChange}
             />
           </div>
-          <button type="submit" className="boton btn btn-primary" onClick={() => window.location.href = '/videogame'}>
+          <button type="submit" className="boton btn btn-primary" onClick={handleSubmit}>
             Submit
           </button>
           {errorMessage && <p>{errorMessage}</p>}

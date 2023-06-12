@@ -44,6 +44,7 @@ function App() {
         <Route exact path='/Doctor' element={<Doctor />} />
         <Route exact path='/Paciente' element={<Paciente/>} />
         <Route exact path='/Registro' element={<Registro/>} />
+        <Route exact path='/Unity' element={<Unity/>} /> 
       </Routes>
     </div>
 

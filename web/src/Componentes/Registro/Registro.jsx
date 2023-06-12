@@ -1,5 +1,5 @@
 import {useRef} from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate , Link} from 'react-router-dom';
 import axios from 'axios';
 import './Registro.css'
 import Unity from '../../Unity/Unity.jsx'
@@ -92,7 +92,7 @@ function Registro(){
 
     
       sendDataToAPI(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10);
-      navigate('/videogame')
+    //   navigate('/videogame')
       
     }
 
@@ -150,7 +150,8 @@ function Registro(){
 
                     </div>
 
-                    <button onClick={handleClick} className='boton'> Submit </button>
+                    {/* <button onClick={handleClick} className='boton'> Submit </button> */}
+                    <Link to="file:///C:/Users/adria/My%20project%20(6)/WegGl/index.html">Submit</Link>
                 </form>
                
             </div>
