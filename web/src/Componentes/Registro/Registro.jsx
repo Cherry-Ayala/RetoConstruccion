@@ -15,6 +15,13 @@ function Registro(){
     const inputRef5 = useRef(null);
     const inputRef6 = useRef(null);
 
+    const inputRef7 = useRef(null);
+    const inputRef8 = useRef(null);
+    const inputRef9 = useRef(null);
+    const inputRef10 = useRef(null);
+    
+
+
 
 
     function handleClick() {
@@ -39,7 +46,19 @@ function Registro(){
       console.log(inputRef6.current.value);
       var v6 = inputRef6.current.value
 
-      function sendDataToAPI(v1, v2, v3, v4, v5, v6) {
+      console.log(inputRef7.current.value);
+      var v7 = inputRef7.current.value
+
+      console.log(inputRef8.current.value);
+      var v8 = inputRef8.current.value
+
+      console.log(inputRef9.current.value);
+      var v9 = inputRef9.current.value
+
+      console.log(inputRef10.current.value);
+      var v10 = inputRef10.current.value
+
+      function sendDataToAPI(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10) {
         const apiUrl = 'http://localhost:4000/api/addPacienteLog'; // Replace with your API endpoint
       
         // Create the request body with the input data
@@ -49,7 +68,13 @@ function Registro(){
           "v3" : v3,
           "v4" : v4,
           "v5" : v5,
-          "v6" : v6
+          "v6" : v6,
+          "v7" : v7,
+          "v8" : v8,
+          "v9" : v9,
+          "v10" : v10
+
+          
         };
       
         // Send the POST request to the API using Axios
@@ -65,9 +90,10 @@ function Registro(){
           });
       }
 
-      sendDataToAPI(v1, v2, v3, v4, v5, v6);
     
       navigate('/videogame')
+      sendDataToAPI(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10);
+      
     }
 
 
@@ -104,25 +130,22 @@ function Registro(){
                     <div className="row">
                         <div className='col'>
                             <label for="exampleFormControlSelect1">¿Tomas medicamento?</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                            <option>SI</option>
-                            <option>NO</option>
-                            </select>
+                            <input type="text" className='form-control' ref = {inputRef7} placeholder='Si/No...'/>
                         </div>
                         <div className='col'>
                             <label for="exampleFormControlSelect1">Ingresa fecha de inicio</label>
-                            <input type="text" className='form-control' placeholder='Fecha...'/>
+                            <input type="text" className='form-control' ref = {inputRef8} placeholder='Fecha...'/>
                         </div>
                     </div>
 
                     <div className="row">
                         <div className='col'>
                             <label for="exampleFormControlSelect1">Ingresa nombre de medicamento</label>
-                            <input type="text" className='form-control' placeholder='Nombre...'/>
+                            <input type="text" className='form-control' ref = {inputRef9} placeholder='Nombre...'/>
                         </div>
                         <div className="col">
                             <label for="exampleFormControlTextarea1">Ingres instrucciones de doctor</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder='Horario, Descripción, Receta, etc...'></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ref = {inputRef10} placeholder='Horario, Descripción, Receta, etc...'></textarea>
                         </div>
 
                     </div>
