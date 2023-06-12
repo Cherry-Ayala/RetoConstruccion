@@ -27,9 +27,9 @@ function Login () {
       .post('/api/login', { username, password }) //poner api correcta
       .then(response => {
         if (response.data.user === 'Doctor' && response.data.password === 'jueves') {
-          setRedirectUrl('/Doctor');
+          window.location.href('/Doctor');
         } else if (response.data.user) {
-          setRedirectUrl(Unity);
+          window.location.href(Unity);
         } else {
           setErrorMessage('Invalid username or password.');
         }
