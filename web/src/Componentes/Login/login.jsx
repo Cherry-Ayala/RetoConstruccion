@@ -3,6 +3,7 @@ import axios from 'axios';
 //import { Navigate } from 'react-router-dom';
 import './login.css'
 import Unity from '../../Unity/Unity.jsx'
+import { hasFormSubmit } from '@testing-library/user-event/dist/utils';
 
 function Login () {
 
@@ -67,7 +68,7 @@ function Login () {
               onChange={handlePasswordChange}
             />
           </div>
-          <button type="submit" className="boton btn btn-primary" onClick={() => window.location.href = Unity}>
+          <button type="submit" className="boton btn btn-primary" onClick={handleSubmit}>
             Submit
           </button>
           {errorMessage && <p>{errorMessage}</p>}
