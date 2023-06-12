@@ -6,9 +6,6 @@ import Unity from '../../Unity/Unity.jsx'
 
 function Login () {
 
-  const handleClick = () => {
-    window.location.href(Unity);
-  }
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +29,7 @@ function Login () {
         if (response.data.user === 'Doctor' && response.data.password === 'jueves') {
           setRedirectUrl('/Doctor');
         } else if (response.data.user) {
-          setRedirectUrl('/unity');
+          setRedirectUrl(Unity);
         } else {
           setErrorMessage('Invalid username or password.');
         }
@@ -46,7 +43,7 @@ function Login () {
     <div className="login-container card-block align">
       <div className="card-login card d-inline-flex p-2">
         <h1>Login</h1>
-        <form className="form-control-lg" onSubmit={handleClick}>
+        <form className="form-control-lg" onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Usuario</label>
             <input
