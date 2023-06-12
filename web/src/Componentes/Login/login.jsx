@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import './login.css'
 
 function Login () {
@@ -70,7 +70,7 @@ function Login () {
           {errorMessage && <p>{errorMessage}</p>}
         </form>
       </div>
-      {redirectUrl && <Redirect to={redirectUrl} />}
+      {redirectUrl && <Navigate to={redirectUrl} />}
     </div>
   );
 }
