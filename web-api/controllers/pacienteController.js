@@ -65,7 +65,7 @@ class MainController {
 
       async addPacienteLog(req , res){
         try {
-          if(req.body.v1 != null && req.body.v2 != null && req.body.v3 != null && req.body.v4 != null && req.body.v5 != null && req.body.v6 != null) {
+          if(req.body.v1 != null && req.body.v2 != null && req.body.v3 != null && req.body.v4 != null && req.body.v5 != null && req.body.v6 != null && req.body.v7 != null && req.body.v8 != null && req.body.v9 != null && req.body.v10 != null) {
             const pool = await poolPromise
             const result = await pool.request()
             .input('v1',sql.VarChar, req.body.v1)
@@ -74,9 +74,14 @@ class MainController {
             .input('v4',sql.Date, req.body.v4)
             .input('v5',sql.VarChar, req.body.v5)
             .input('v6',sql.VarChar, req.body.v6)
+            .input('v7',sql.VarChar, req.body.v7)
+            .input('v8',sql.VarChar, req.body.v8)
+            .input('v9',sql.VarChar, req.body.v9)
+            .input('v10',sql.VarChar, req.body.v10)
+
             
 
-            .query("exec insTabla @v1, @v2, @v3, @v4, @v5, @v6")
+            .query("exec insTab @v1, @v2, @v3, @v4, @v5, @v6, @v7, @v8, @v9, @v10")
             res.json(result)
           } else {
             res.send('Por favor llena todos los datos!')

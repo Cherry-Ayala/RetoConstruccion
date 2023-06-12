@@ -74,15 +74,15 @@ class MainController {
         }
     }
 
-    async addtiempoEjercicio(req , res){
+    async addtiempoAnae(req , res){
         try {
-            if(req.body.Duracion_minutos != null && req.body.Id != null)
+            if(req.body.v1 != null)
             {
             const pool = await poolPromise
             const result = await pool.request()
-            .input('Duracion_minutos',sql.Float, req.body.Duracion_minutos)
-            .input('Id',sql.Int, req.body.Id)
-            .query("INSERT INTO [dbo].[catEjercicio] VALUES(@Duracion_minutos, @Id)")
+            .input('v1',sql.Int, req.body.v1)
+            
+            .query("exec insAnae @v1;")
             res.json(result)
             }
             else {
@@ -93,6 +93,27 @@ class MainController {
             res.send(error.message)
         }
     }
+
+
+    async addtiempoAe(req , res){
+      try {
+          if(req.body.v1 != null)
+          {
+          const pool = await poolPromise
+          const result = await pool.request()
+          .input('v1',sql.Int, req.body.v1)
+          
+          .query("exec insAe @v1;")
+          res.json(result)
+          }
+          else {
+              res.send('Por favor llena todos los datos!')
+            }
+      } catch (error) {
+          res.status(500)
+          res.send(error.message)
+      }
+  }
 
 
 
@@ -140,5 +161,5 @@ class MainController {
 
 }
 
-const catMedicamentosController = new MainController()
-module.exports = catMedicamentosController;
+const ejercicioController = new MainController()
+module.exports = ejercicioController;

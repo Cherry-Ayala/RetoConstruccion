@@ -41,7 +41,8 @@ router.put('/api/updateTomoMed/:Id_CatMed', medicamentoController.updateTomoMed)
 router.get('/api/getEjercicios', ejercicioController.getEjercicios); 
 router.post('/api/addDescEjercicio', ejercicioController.addDescEjercicio); //Dice que ejericio realizo
 router.put('/api/updateDescEjercicio/:IdEjercicio', ejercicioController.updateDescEjercicio); //actualiza ejercicio
-router.post('/api/addtiempoEjercicio', ejercicioController.addtiempoEjercicio); //Agrega el tiempo en minutos
+router.post('/api/addtiempoAnae', ejercicioController.addtiempoAnae); //Agrega el tiempo en minutos
+router.post('/api/addtiempoAe', ejercicioController.addtiempoAe); //Agrega el tiempo en minutos
 router.put('/api/updatetiempoEjercicio/:Id', ejercicioController.updatetiempoEjercicio); //actualiza tiempo en minutos
 
 
