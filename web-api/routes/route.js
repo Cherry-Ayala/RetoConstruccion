@@ -48,6 +48,18 @@ router.put('/api/updatetiempoEjercicio/:Id', ejercicioController.updatetiempoEje
 router.get('/api/getAlimentos', alimentoController.getAlimentos); 
 router.post('/api/addComida', alimentoController.addComida); //Dice comida
 router.put('/api/updateComida/:Id', alimentoController.updateComida); //actualiza comida
+router.post('/api/addDes', alimentoController.addDes); //Agrega desayuno
+router.post('/api/addCom', alimentoController.addCom); //Agrega comida
+router.post('/api/addCe', alimentoController.addCe); //Agraga cena
+router.post('/api/addSnackDe', alimentoController.addSnackDe); //Agraga Snack
+router.post('/api/addSnackCo', alimentoController.addSnackCo); //Agraga Snack
+router.post('/api/addSnackNo', alimentoController.addSnackNo); //Agraga Snack
+
+
+
+
+
+
 
 
 router.post('/api/addLogin', loginController.addLogin); //Agraga usuario y contraseña http://localhost:4000/api/addLogin
