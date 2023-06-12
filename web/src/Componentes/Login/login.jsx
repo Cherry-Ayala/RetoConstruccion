@@ -7,7 +7,7 @@ import Unity from '../../Unity/Unity.jsx'
 function Login () {
 
   const handleClick = () => {
-    navigate('/videogame')
+    window.location.href(Unity);
   }
 
   const [username, setUsername] = useState('');
