@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Navigate, Routes, Route, useNavigate } from 'react-router-dom';
 import './login.css'
 import Unity from '../../Unity/Unity.jsx'
+import { hasFormSubmit } from '@testing-library/user-event/dist/utils';
 
 function Login () {
 
@@ -11,7 +12,7 @@ function Login () {
   
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [redirectUrl, setRedirectUrl] = useState('');
+  //const [redirectUrl, setRedirectUrl] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   
   const handleUsernameChange = (event) => {
@@ -30,9 +31,9 @@ function Login () {
       .post('/api/login', { username, password }) //poner api correcta
       .then(response => {
         if (response.data.user === 'Doctor' && response.data.password === 'jueves') {
-          setRedirectUrl('/Doctor');
+          window.location.href('/Doctor');
         } else if (response.data.user) {
-          setRedirectUrl('/unity');
+          window.location.href(Unity);
         } else {
           setErrorMessage('Invalid username or password.');
         }
@@ -47,7 +48,7 @@ function Login () {
     <div className="login-container card-block align">
       <div className="card-login card d-inline-flex p-2">
         <h1>Login</h1>
-        <form className="form-control-lg">
+        <form className="form-control-lg" >
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Usuario</label>
             <input
@@ -77,7 +78,7 @@ function Login () {
           {errorMessage && <p>{errorMessage}</p>}
         </form>
       </div>
-      {redirectUrl && <Navigate to={redirectUrl} />}
+      
     </div>
   );
 }
