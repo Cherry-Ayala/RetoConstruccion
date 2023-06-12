@@ -48,13 +48,13 @@ function Login () {
         <h1>Login</h1>
         <form className="form-control-lg" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Correo</label>
+            <label htmlFor="exampleInputEmail1">Usuario</label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
-              placeholder="Enter email"
+              placeholder="Ingresa usuario..."
               value={username}
               onChange={handleUsernameChange}
             />
@@ -65,7 +65,7 @@ function Login () {
               type="password"
               className="form-control"
               id="exampleInputPassword1"
-              placeholder="Password"
+              placeholder="Contraseña..."
               value={password}
               onChange={handlePasswordChange}
             />
