@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const UnityComponent = () => {
+const Unity = () => {
     useEffect(() => {
         const script = document.createElement('script');
         script.src = //agrega el path al index.html de los webgl del unity;
@@ -19,4 +19,4 @@ const UnityComponent = () => {
 return <div id="unityContainer"></div>;
 };
 
-export default UnityComponent;
+export default Unity;

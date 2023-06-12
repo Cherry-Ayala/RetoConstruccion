@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
 import './login.css'
+import Unity from '../../Unity/Unity.jsx'
 
 function Login () {
+
+  const handleClick = () => {
+    navigate('/videogame')
+  }
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [redirectUrl, setRedirectUrl] = useState('');
@@ -64,7 +70,7 @@ function Login () {
               onChange={handlePasswordChange}
             />
           </div>
-          <button type="submit" className="boton btn btn-primary">
+          <button type="submit" className="boton btn btn-primary" onClick={() => window.location.href = '/videogame'}>
             Submit
           </button>
           {errorMessage && <p>{errorMessage}</p>}

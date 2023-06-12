@@ -1,7 +1,8 @@
 import {useRef} from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Registro.css'
-
+import Unity from '../../Unity/Unity.jsx'
 
 
 function Registro(){
@@ -17,6 +18,8 @@ function Registro(){
 
 
     function handleClick() {
+
+    const navigate = useNavigate();
       
       console.log(inputRef.current.value);
       var v1 = inputRef.current.value
@@ -63,9 +66,8 @@ function Registro(){
       }
 
       sendDataToAPI(v1, v2, v3, v4, v5, v6);
-
-
-      
+    
+      navigate('/videogame')
     }
 
 
@@ -96,7 +98,7 @@ function Registro(){
                             <input type="text" className='form-control' ref = {inputRef5} placeholder='Usuario...'/>
                         </div>
                         <div className="col">
-                            <input type="text" className='form-control' ref = {inputRef6} placeholder='Contraseña...'/>
+                            <input type="password" className='form-control' ref = {inputRef6} placeholder='Contraseña...'/>
                         </div>
                     </div>
                     <div className="row">

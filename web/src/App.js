@@ -8,6 +8,7 @@ import Doctor from './Componentes/Doctor/Doctor.jsx';
 import Paciente from './Componentes/Paciente/Paciente.jsx'
 import Registro from './Componentes/Registro/Registro.jsx';
 import Bienvenida from './Componentes/Bienvenida/Bienvenida.jsx'
+import Unity from './Unity/Unity.jsx'
 //import vistaadmin from './src/vistaadmin';
 
 
@@ -23,6 +24,9 @@ function App() {
     navigate('/Registro')
   }
 
+  const handleClick = () => {
+    navigate('/')
+  }
   // const hideButtons = location.pathname !== '/Login' && location.pathname !== '/Registro' && location.pathname !== '/Doctor' && location.pathname !== '/Paciente';
   const hideButtons = location.pathname !== '/';
   return (
