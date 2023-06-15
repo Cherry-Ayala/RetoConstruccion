@@ -22,11 +22,11 @@ function Registro(){
     
 
 
+    const navigate = useNavigate();
 
 
     function handleClick() {
 
-    const navigate = useNavigate();
       
       console.log(inputRef.current.value);
       var v1 = inputRef.current.value
