@@ -35,7 +35,7 @@ function App() {
       {!hideButtons && (
         <div>
           <button className='boton' onClick={() => window.location.href = '/Login'}>Login</button>
-          <button className='boton' onClick={() => window.location.href = '/Registro'}>Register</button>
+          <button className='boton' onClick={() => window.location.href = '/Registro'}>Registro</button>
         </div>
       )}
       <Routes>
