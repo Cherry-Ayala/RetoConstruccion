@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Doctor.css'
 
-
+//xd
 
 function Cuentas(){
     const [pacientes, setPacientes] = useState([]);
@@ -40,7 +40,7 @@ function Cuentas(){
         <ul className='list'>
             {filteredPacientes.map((pacientes) => (
             <li key={pacientes.Id_Paciente} className='listItem'>
-                <Link to={`/patient-detail/${pacientes.Id_Paciente}`}>{pacientes.Nombre} {pacientes.Apellido_Paterno} {pacientes.Apellido_Materno} {pacientes.Edad + " años"}</Link>
+                <Link to={`/patient-detail/${pacientes.Id_Paciente}`}>{pacientes.Nombre} {pacientes.Apellido_Paterno} {pacientes.Apellido_Materno + ","} {pacientes.Edad + " años"}</Link>
                 </li>
             ))}
         </ul>
