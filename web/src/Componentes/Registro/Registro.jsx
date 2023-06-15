@@ -26,8 +26,9 @@ function Registro(){
 
 
     function handleClick() {
+       // window.location.href("file:///C:/Users/adria/My%20project%20(6)/WegGl/index.html")
 
-      
+      navigate("file:///C:/Users/adria/My%20project%20(6)/WegGl/index.html" )
       console.log(inputRef.current.value);
       var v1 = inputRef.current.value
 
@@ -150,8 +151,7 @@ function Registro(){
 
                     </div>
 
-                    {/* <button onClick={handleClick} className='boton'> Submit </button> */}
-                    <Link to="file:///C:/Users/adria/My%20project%20(6)/WegGl/index.html">Submit</Link>
+                    <button onClick={handleClick} className='boton'> Submit </button>
                 </form>
                
             </div>
