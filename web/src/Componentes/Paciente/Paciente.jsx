@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Paciente.css'
 import axios from 'axios'
-import { wait } from '@testing-library/user-event/dist/utils';
+
 
 function Paciente() {
 

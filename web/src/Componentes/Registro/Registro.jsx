@@ -1,5 +1,5 @@
 import {useRef} from 'react';
-import { Navigate, useNavigate , Link} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './Registro.css'
 import Unity from '../../Unity/Unity.jsx'
