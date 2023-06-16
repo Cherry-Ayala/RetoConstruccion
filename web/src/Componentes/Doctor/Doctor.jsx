@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Doctor.css'
 
-
+//xd
 
 function Cuentas(){
     const [pacientes, setPacientes] = useState([]);
