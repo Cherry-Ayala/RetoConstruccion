@@ -15,7 +15,7 @@ function Paciente() {
   
   const fecthPaciente = async() => {
     try{
-      const response = await axios.get('/api/getPaciente/:Id_Paciente'); 
+      const response = await axios.get(`/api/getPaciente/${Id_Paciente}`); //Pasa la id de paciente
       setPaciente(response.data);
     }catch(error){
       console.error('error', error);
@@ -36,22 +36,22 @@ function Paciente() {
 
         <div className="renglon1 row w-100">
           <div className="columna col-sm rounded d-flex align-items-center justify-content-center">
-            <p className='m-0'>aqui va enfermedad</p>
+            <p className='m-0'>aqui va enfermedad: {Paciente.enfermeda}</p>
           </div>
           <div className="columna col-sm rounded d-flex align-items-center justify-content-center">
-            <p className='m-0'>aqui va medicamento </p>
+            <p className='m-0'>aqui va medicamento: {Paciente.medicamento} </p>
           </div>
         </div>
 
         <div className='renglon2 row w-100'>
           <div className="columna col-sm rounded d-flex align-items-center justify-content-center">
-              <p className='m-0'>aqui va aliimentacion</p>
+              <p className='m-0'>aqui va aliimentacion: {Paciente.alimentacion}</p>
             </div>
             <div className="columna  col-sm rounded d-flex align-items-center justify-content-center">
-              <p className='m-0'>aqui va sueño</p>
+              <p className='m-0'>aqui va sueño: {Paciente.sueño}</p>
             </div>
             <div className="columna col-sm rounded d-flex align-items-center justify-content-center">
-              <p className='m-0'>aqui va ejercicio </p>
+              <p className='m-0'>aqui va ejercicio: {Paciente.ejercicio} </p>
             </div>
         </div>
       </div>

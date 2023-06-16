@@ -1,4 +1,5 @@
 import React, {useState, useEffect } from 'react';
+import {Table, Button } from "react-bootstrap";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Doctor.css'
@@ -34,18 +35,28 @@ function Cuentas(){
         return Id_Paciente.toString().includes(lowerCaseSearchQuery) || Nombre.toLowerCase().includes(lowerCaseSearchQuery)|| Apellido_Paterno.toLowerCase().includes(lowerCaseSearchQuery)|| Apellido_Materno.toLowerCase().includes(lowerCaseSearchQuery);
     });
 
+    //Agregue esta funcion, deberia de ir a la vista de paciente de ${id}
+    const handlePersonClick = (id) => {
+        history.push(`/Paciente/${id}`);
+      };
+
+      
     return (
     <div className='Cuentas'>
         <input type="text" placeholder='Search...' className="search" onChange={handleSearchChange} />
         <ul className='list'>
             {filteredPacientes.map((pacientes) => (
             <li key={pacientes.Id_Paciente} className='listItem'>
-                <Link to={`/patient-detail/${pacientes.Id_Paciente}`}>{pacientes.Nombre} {pacientes.Apellido_Paterno} {pacientes.Apellido_Materno} {pacientes.Edad + " años"}</Link>
+                <Link to={`/Paciente/${pacientes.Id_Paciente}`} onClick={() => handlePersonClick(pacientes.Id_Paciente)}>
+                    {pacientes.Nombre} {pacientes.Apellido_Paterno} {pacientes.Apellido_Materno} {pacientes.Edad + " años"}
+                </Link>
                 </li>
             ))}
         </ul>
     </div>
 );
 }
+
+  
 
 export default Cuentas; 
