@@ -16,6 +16,19 @@ class MainController {
     }
   }
 
+  async getAlimento(req, res){
+    try {
+        const pool = await poolPromise
+        const result = await pool.request()
+        .input('Id_Paciente',sql.Int, req.params.Id_CatMed)
+        .query("select * from [dbo].[Alimentos_Paciente] where Id_Paciente = @Id_Paciente")
+        res.json(result.recordset)
+    } catch (error) {
+      res.status(500)
+      res.send(error.message)
+    }
+  }
+
 async addComida(req , res){
     try {
         if(req.body.Descripcion != null && req.body.Id != null)

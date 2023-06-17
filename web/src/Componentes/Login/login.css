@@ -11,7 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* .card-login{
+ .card-login{
   border: 5px solid;
   border-radius: 25px;
   border-color: hsl(205,81%,78%); 
@@ -24,7 +24,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-} */
+} 
 .login-container{
   margin-top: 10%;
 } 
@@ -37,13 +37,17 @@ body {
   background: hsl(205,81%,78%); 
   color: #f3f3f3;
   font-weight: bold; 
-  font-size: 28px;
+  font-size: 25px;
   padding: 7px 15px;
   border: 2px solid;
   border-radius: 10px;
   outline: none;
   cursor: pointer;
 }
+
+/*.form-group{
+  font-size: 25;
+}*/
 
 .boton{
   background: hsl(205, 23%, 45%); 

@@ -16,6 +16,19 @@ class MainController {
       }
     }
 
+    async getMed(req, res){
+      try {
+          const pool = await poolPromise
+          const result = await pool.request()
+          .input('Id_MedPac',sql.Int, req.params.Id_CatMed)
+          .query("select * from [dbo].[catMedicamentos] where Id_CatMed = @Id_CatMed")
+          res.json(result.recordset)
+      } catch (error) {
+        res.status(500)
+        res.send(error.message)
+      }
+    }
+
     async getcatMed(req , res){
         try {
             const pool = await poolPromise

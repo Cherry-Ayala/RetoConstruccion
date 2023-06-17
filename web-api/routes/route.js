@@ -35,6 +35,7 @@ router.put('/api/updateCalidad', descansoController.updateCalidad); //Actualiza 
 //router.put('/api/updateCalidadDescanso/:Id_Descanso', descansoController.updateCalidadDescanso); //Actualiza solo calidad descanso
 router.put('/api/updateFechaDescanso/:Id_Descanso', descansoController.updateFechaDescanso); //Actualiza solo Fecha descanso
 
+router.get('/api/getMed/:Id_MedPac', medicamentoController.getMed); 
 router.get('/api/getcatMeds', medicamentoController.getcatMeds); 
 router.get('/api/getcatMed/:Id_CatMed', medicamentoController.getcatMed); 
 router.post('/api/addCatMed', medicamentoController.addCatMed); //Para todo
@@ -42,6 +43,8 @@ router.post('/api/addTomoMed', medicamentoController.addTomoMed); //Para decir s
 router.put('/api/updateTomoMed/:Id_CatMed', medicamentoController.updateTomoMed); //actualiza med
 
 router.get('/api/getEjercicios', ejercicioController.getEjercicios); 
+router.get('/api/getEjercicio/:Id_Paciente', ejercicioController.getEjercicios); 
+
 router.post('/api/addDescEjercicio', ejercicioController.addDescEjercicio); //Dice que ejericio realizo
 router.put('/api/updateDescEjercicio/:IdEjercicio', ejercicioController.updateDescEjercicio); //actualiza ejercicio
 router.post('/api/addtiempoAnae', ejercicioController.addtiempoAnae); //Agrega el tiempo en minutos
@@ -49,7 +52,8 @@ router.post('/api/addtiempoAe', ejercicioController.addtiempoAe); //Agrega el ti
 router.put('/api/updatetiempoEjercicio/:Id', ejercicioController.updatetiempoEjercicio); //actualiza tiempo en minutos
 
 
-router.get('/api/getAlimentos', alimentoController.getAlimentos); 
+router.get('/api/getAlimentos', alimentoController.getAlimentos);
+router.get('/api/getAlimento/:Id_Paciente', alimentoController.getAlimentos); 
 router.post('/api/addComida', alimentoController.addComida); //Dice comida
 router.put('/api/updateComida/:Id', alimentoController.updateComida); //actualiza comida
 router.post('/api/addDes', alimentoController.addDes); //Agrega desayuno

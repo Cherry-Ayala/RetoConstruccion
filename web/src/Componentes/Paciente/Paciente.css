@@ -2,6 +2,16 @@
     height: 50px;
     background-color: white;
 }
+.m-0{
+    font-size: 20px;
+    color: black;
+}
+
+li{
+    font-size: 20px;
+    color: black;
+}
+
 
 .renglon1{
     height: 100px;
@@ -13,4 +23,8 @@
 
 .columna{
     background-color: white;
+}
+
+.renglon1{
+    height: 100px;
 }
