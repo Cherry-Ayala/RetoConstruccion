@@ -145,7 +145,7 @@ function Registro(){
                             <input type="text" className='form-control' ref = {inputRef9} placeholder='Nombre...'/>
                         </div>
                         <div className="col">
-                            <label for="exampleFormControlTextarea1">Ingres instrucciones de doctor</label>
+                            <label for="exampleFormControlTextarea1">Ingrese instrucciones de doctor</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ref = {inputRef10} placeholder='Horario, Descripción, Receta, etc...'></textarea>
                         </div>
 
